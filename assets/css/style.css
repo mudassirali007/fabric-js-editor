@@ -704,6 +704,7 @@ a {
 }
 
 .downloadbtn.disabled,
+.previewbtn.disabled,
 .previewButton.disabled,
 .tgaDownload.disabled {
   opacity: 0.7;
