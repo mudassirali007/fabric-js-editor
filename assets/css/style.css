@@ -82,9 +82,6 @@ body {
 
 .guide {
   background-image: url("/assets/images/guide.png");
-  height: 1080px;
-  width: 1920px;
-  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
 }
