@@ -1,24 +1,24 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global.UndoRedoStack = factory());
+      typeof define === 'function' && define.amd ? define(factory) :
+          (global.UndoRedoStack = factory());
 }(this, (function () {
   'use strict';
 
   const push$1 = state =>
-    val => state.push(val);
+      val => state.push(val);
 
   const pop = state => () =>
-    state.pop();
+      state.pop();
 
   const isEmpty = state => () =>
-    state.length < 1;
+      state.length < 1;
 
   const clear$1 = state => () =>
-    state.splice(0);
+      state.splice(0);
 
   const current = state => () =>
-    state[state.length - 1];
+      state[state.length - 1];
 
   const getValues$1 = state => () => [...state];
 
