@@ -80,12 +80,6 @@ body {
   margin: auto;
 }
 
-.guide {
-  background-image: url("../../assets/images/guide.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .toolpanel {
   background-color: #F9F9F9;
   width: 300px;
