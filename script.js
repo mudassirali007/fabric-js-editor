@@ -27,7 +27,6 @@ try {
   ];
 
   var imgEditor = new ImageEditor('#image-editor-container', buttons, []);
-  console.log('initialize image editor');
 
   // let status = imgEditor.getCanvasJSON();
   // imgEditor.setCanvasStatus(status);
