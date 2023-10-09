@@ -598,6 +598,27 @@ a {
 }
 
 .downloadbtn {
+  margin-right: 20px;
+  height: 50px;
+  line-height: 50px;
+  width: 200px;
+  text-align: center;
+  color: #FFF;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: #3BB44A;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  --loader-width: 0%;
+}
+
+.downloadvideobtn {
   height: 50px;
   line-height: 50px;
   width: 200px;
@@ -660,6 +681,29 @@ a {
   /*-webkit-animation: loading 3s forwards;*/
 }
 
+.downloadvideobtn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background: #3BB44A;
+}
+
+.downloadvideobtn.loading {
+  height: 3px;
+  padding: 0px 35px;
+  background-color: #DDD;
+}
+
+.downloadvideobtn.loading:before {
+  width: var(--loader-width);
+  /*animation: loading 3s forwards;*/
+  /*-webkit-animation: loading 3s forwards;*/
+}
+
 @-webkit-keyframes loading {
   0% {
     width: 0%;
@@ -711,8 +755,16 @@ a {
   box-shadow: inset 0px 0px 0px 2px #EB6203;
   color: #FFFFFF;
 }
+.downloadvideobtn.finished {
+  background-color: #F27722;
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgba(51, 51, 51, 1);
+  -moz-box-shadow: inset 0px 0px 0px 2px rgba(51, 51, 51, 1);
+  box-shadow: inset 0px 0px 0px 2px #EB6203;
+  color: #FFFFFF;
+}
 
 .downloadbtn.disabled,
+.downloadvideobtn.disabled,
 .previewbtn.disabled,
 .previewButton.disabled,
 .tgaDownload.disabled {
