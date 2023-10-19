@@ -172,6 +172,17 @@ body {
   margin: 9px;
 }
 
+#images-panel .button {
+  cursor: pointer;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 9px;
+}
+
 #background-panel .canvas-size-setting input {
   width: 60px;
   background-color: #FFF;

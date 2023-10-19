@@ -5,6 +5,7 @@ try {
     'select',
     'icons',
     'shapes',
+    'images',
     'draw',
     'line',
     'path',
