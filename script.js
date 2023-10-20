@@ -16,7 +16,8 @@ try {
     'redo',
     'save',
     'download',
-    'clear'
+    'clear',
+    'template',
   ];
 
   // define custom shapes

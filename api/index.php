@@ -74,8 +74,19 @@ function handlePostRequest() {
 
     switch ($action) {
         case 'saveTemplate':
-            $filename = 'templates/' . uniqid() . '.json';
-            file_put_contents($filename, json_encode($data, JSON_PRETTY_PRINT));
+            // Check if 'name' and 'currentState' are available in the data
+            if (!isset($data['name']) || !isset($data['currentState'])) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Name or currentState missing']);
+                return;
+            }
+
+            // Use the 'name' as a prefix to the filename
+            $filename = 'templates/' . $data['name'] . '.json';
+
+            // Save only the 'currentState' to the file
+            file_put_contents($filename, json_encode($data['currentState'], JSON_PRETTY_PRINT));
+
             echo json_encode(['message' => 'Template saved successfully', 'filename' => $filename]);
             break;
 
@@ -85,4 +96,5 @@ function handlePostRequest() {
             break;
     }
 }
+
 

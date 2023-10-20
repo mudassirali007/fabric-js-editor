@@ -182,6 +182,9 @@ body {
   display: inline-block;
   margin: 9px;
 }
+#template {
+  display: none;
+}
 
 #background-panel .canvas-size-setting input {
   width: 60px;
@@ -421,6 +424,13 @@ body {
   right: 0px;
 }
 
+.ifield2 {
+  width: 260px !important;
+  margin-right: 20px;
+  height: 50px;
+  right: 0px;
+}
+
 #topbar button.previewButton {
   padding: 10px 20px;
   background-color: #FFFFFF;
@@ -461,6 +471,22 @@ body {
   transition: 0.3s;
   height: 48px;
   position: absolute;
+  right: 280px;
+}
+
+button.save-template-btn {
+  padding: 10px 20px;
+  background-color: #ededed;
+  color: #252525;
+  border: none;
+  outline: none;
+  margin-right: 20px;
+  /*margin-bottom: 20px;*/
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 48px;
   right: 280px;
 }
 
