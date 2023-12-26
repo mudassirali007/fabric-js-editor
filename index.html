@@ -1,9 +1,15 @@
 <html>
+
 <head>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="./assets/css/loader.css">
   <script src="assets/js/jquery-3.7.1.min.js"></script>
+
   <script>
+    let objectId = 0,
+      gifImageTarget = 0,
+      LayerGifImgId = 0;
     jQuery.fn.outerHTML = function () {
       return jQuery("<div />").append(this.eq(0).clone()).html();
     };
@@ -12,14 +18,14 @@
       return this.toString().split(".")[1].length || 0;
     };
   </script>
-  <script src="assets/js/3.6.3_fabric.min.js"></script>
+  <script src="./assets/js/function.js"></script>
+  <!-- <script src="assets/js/3.6.3_fabric.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"
+    integrity="sha512-P6uimDKoj1nnPSo2sPmgbZy99pPq9nHXhLwddOnLi1DC+fEM83FEUcHPRPifbx1rlRkdMinViaWyDfG45G9BuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="assets/js/colorpicker2_dist_spectrum.min.js"></script>
-  <link
-          rel="stylesheet"
-          type="text/css"
-          href="assets/css/colorpicker2_dist_spectrum.min.css"
-  />
+  <link rel="stylesheet" type="text/css" href="assets/css/colorpicker2_dist_spectrum.min.css" />
 
   <script src="./vendor/grapick.min.js"></script>
   <link rel="stylesheet" href="./vendor/grapick.min.css" />
@@ -29,12 +35,15 @@
   <script src="./lib/core.js"></script>
   <script src="./lib/toolbar.js"></script>
   <script src="./lib/canvas.js"></script>
+  <script src="./lib/fabric-gif.js"></script>
+  <script src="./lib/libgif.js"></script>
   <script src="./lib/icons.js"></script>
   <script src="./lib/shapes.js"></script>
   <script src="./lib/images.js"></script>
   <script src="./lib/animation.js"></script>
   <script src="./lib/template.js"></script>
   <script src="./lib/fabricOverride.js"></script>
+  <script src="./lib/fabric-layer.js"></script>
 
   <script src="./lib/freeDrawSettings.js"></script>
   <script src="./lib/clipPathSettings.js"></script>
@@ -47,14 +56,24 @@
   <script src="./lib/tip.js"></script>
   <script src="./lib/upload.js"></script>
   <script src="./lib/copyPaste.js"></script>
-
+  <script src="./lib/movements-animation.js"></script>
   <script src="./lib/utils.js"></script>
   <script src="./lib/zoom.js"></script>
   <script src="./lib/saveInBrowser.js"></script>
   <script src="assets/js/3.2.2_jszip.min.js"></script>
+
 </head>
+
 <body>
-<div id="image-editor-container"></div>
+  <div id="image-editor-container"></div>
+  <div class="full-screen-loader">
+    <div class="loader">
+      <div class="load"></div>
+    </div>
+    <span class="label text-white mt-2 us-n">Please wait ...</span>
+  </div>
+
 </body>
 <script src="./script.js"></script>
+
 </html>

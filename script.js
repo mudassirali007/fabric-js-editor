@@ -29,7 +29,6 @@ try {
   ];
 
   var imgEditor = new ImageEditor('#image-editor-container', buttons, []);
-
   // let status = imgEditor.getCanvasJSON();
   // imgEditor.setCanvasStatus(status);
 
@@ -38,8 +37,8 @@ try {
   browserWarning.innerHTML = '<p style="line-height: 26px; margin-top: 100px; font-size: 16px; color: #555">Your browser is out of date!<br/>Please update to a modern browser, for example:<a href="https://www.google.com/chrome/" target="_blank">Chrome</a>!</p>';
 
   browserWarning.setAttribute(
-      'style',
-      'position: fixed; z-index: 1000; width: 100%; height: 100%; top: 0; left: 0; background-color: #f9f9f9; text-align: center; color: #555;'
+    'style',
+    'position: fixed; z-index: 1000; width: 100%; height: 100%; top: 0; left: 0; background-color: #f9f9f9; text-align: center; color: #555;'
   )
 
   // check for flex and grid support
@@ -55,3 +54,18 @@ try {
     document.body.appendChild(browserWarning)
   }
 }
+
+
+// tab system
+$(document).ready(function () {
+  $(document).on('click', ".tab-system-container .tab", function () {
+    let $parent = $(this).parents(".tab-system-container"),
+      tab = $(this).data("tab");
+    // remove tab active class
+    $(this).addClass("active").siblings().removeClass("active");
+    // remove tab content active class
+    $parent.find(".tab-content").removeClass("active");
+    // add tab content active class
+    $parent.find(`.tab-content[data-tab=${tab}]`).addClass("active");
+  });
+});

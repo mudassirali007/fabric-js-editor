@@ -9,8 +9,8 @@ body {
 
 .default-container {
   width: 100%;
-  height: 100%;
-  /* display: flex; */
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .toolbar {
@@ -22,8 +22,13 @@ body {
   align-items: center;
 }
 
+.toolpanel h4 {
+  padding: 7px 0 8px !important;
+  margin: 0 !important;
+}
+
 .toolbar button {
-  width: 64px;
+  width: 52px;
   height: 54px;
   opacity: 0.55;
   clear: both;
@@ -82,7 +87,7 @@ body {
 
 .toolpanel {
   background-color: #F9F9F9;
-  width: 300px;
+  width: 310px;
   top: 0;
   left: 0;
   height: 100%;
@@ -106,7 +111,7 @@ body {
 }
 
 .toolpanel .content {
-  padding: 8px;
+  padding: 11px;
   position: relative;
   height: -webkit-fill-available;
   height: -ms-fill-available;
@@ -150,6 +155,24 @@ body {
   width: 40px;
 }
 
+#addClipPath {
+  cursor: pointer;
+  line-height: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 110px;
+  height: 32px;
+  display: inline-block;
+  margin: 9px;
+  background-color: #FFFFFF;
+  border: 1px solid #AFAFAF;
+  /*+border-radius: 3px;*/
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
 #shapes-panel .button {
   cursor: pointer;
   line-height: 0;
@@ -182,6 +205,7 @@ body {
   display: inline-block;
   margin: 9px;
 }
+
 #template {
   display: none;
 }
@@ -220,7 +244,7 @@ body {
 #select-panel .text-section .sizes,
 #select-panel .text-section .align,
 #select-panel .text-section .color {
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 #select-panel .text-section .sizes input {
@@ -300,15 +324,15 @@ body {
 }
 
 .toolpanel .input-container select {
-  width: 50%;
-  height: 29px;
+  width: 46%;
+  height: 24px;
   border: 1px solid #CCC;
   border-radius: 5px;
   outline: none;
 }
 
 .toolpanel .input-container .sp-replacer {
-  width: 50%;
+  width: 46%;
 }
 
 .toolpanel .input-container .custom-number-input {
@@ -316,7 +340,7 @@ body {
   display: flex;
   align-items: center;
   padding: 1px;
-  height: 30px;
+  height: 24px;
   background-color: #E4E4E4;
   border-radius: 6px;
   text-align: center;
@@ -324,19 +348,19 @@ body {
 
 .toolpanel .input-container .custom-number-input button {
   width: 36px !important;
-  height: 30px !important;
+  height: 24px !important;
   background-color: #FFF;
   background-clip: padding-box;
   border-radius: 6px;
   color: #333;
   border: 1px solid transparent;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   outline: none;
 }
 
 .toolpanel .input-container .custom-number-input input {
-  height: 30px !important;
+  height: 24px !important;
   width: 60px !important;
   background: transparent !important;
   border: none;
@@ -350,51 +374,35 @@ body {
   margin: 0;
 }
 
-/* Firefox */
-.toolpanel .input-container .custom-number-input input[type=number] {
-  -moz-appearance: textfield;
+/*RANGE SLIDER*/
+input[type="range"] {
+  width: 150px;
+  -webkit-appearance: none;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
-.tab-container .tabs {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
+input[type="range"]:focus {
+  outline: none;
 }
 
-.tab-container .tabs .tab-label {
-  font-size: 16px;
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #808080;
+  border-radius: 4px;
+  width: 100%;
+  height: 4px;
   cursor: pointer;
 }
 
-.tab-container .tabs .tab-label.active {
-  color: black;
-}
-
-.gradient-orientation-container {
-  padding-top: 40px;
-}
-
-.drag-drop-input {
-  background-color: #FFF;
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px dashed #CCC;
-  border-radius: 6px;
-  text-align: center;
-  padding: 120px;
-}
-
-.drag-drop-input.dragging {
-  border-color: #4368A9;
-}
-
-#tip-container {
-  padding: 10px;
-  text-align: center;
-  touch-action: none;
-  cursor: default;
-  color: #888;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  background: #006FCE;
+  border-radius: 50%;
+  border: 1px solid #EAEAEA;
+  margin-top: -7px;
+  cursor: pointer;
 }
 
 /*------ TOPBAR // Logo */
@@ -417,10 +425,8 @@ body {
 }
 
 .ifield1 {
-  width: 260px !important;
   margin-right: 20px;
-  height: 50px;
-  position: absolute;
+  height: 48px;
   right: 0px;
 }
 
@@ -432,7 +438,7 @@ body {
 }
 
 #topbar button.previewButton {
-  padding: 10px 20px;
+  padding: 10px;
   background-color: #FFFFFF;
   color: #252525;
   border: none;
@@ -453,8 +459,13 @@ body {
   align-items: center;
 }
 
+#selectAnimation {
+  margin-right: 1rem;
+}
+
 .p-1 {
-  padding: 1rem;
+  width: 255px;
+  padding-right: 0.7rem;
 }
 
 #topbar button.pngDownload {
@@ -470,13 +481,15 @@ body {
   cursor: pointer;
   transition: 0.3s;
   height: 48px;
-  position: absolute;
-  right: 280px;
+  display: inline-block;
+  float: right;
+  /*position: absolute;*/
+  /*right: 280px;*/
 }
 
 button.save-template-btn {
   padding: 10px 20px;
-  background-color: #ededed;
+  background-color: #EDEDED;
   color: #252525;
   border: none;
   outline: none;
@@ -500,11 +513,11 @@ textarea {
   border: none;
   border-radius: 0.125em;
   display: block;
-  font: inherit;
-  font-size: 1.5em;
-  line-height: 2em;
+  font: bold medium sans-serif;
+  font-size: 1.3em;
+  line-height: 1.4em;
   /*margin: 0.5em auto;*/
-  padding: 0 0.5em;
+  padding: 0.5em 0.5em 0 0.5em;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 50%;
@@ -519,11 +532,52 @@ input[type="text"][required] {
 }
 
 input[type="checkbox"] {
-  width: 24px !important;
-  height: 20px !important;
+  width: 20px !important;
+  height: 16px !important;
   cursor: pointer;
   outline: none;
-  margin-left: auto;
+  margin-top: 4px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.guidetxt3 {
+  vertical-align: top;
+  margin-top: 15px;
+  font-size: 18px;
+  width: 160px;
+}
+
+select#selectTemplate {
+  padding: 10px 50px 10px 10px;
+  color: white;
+  cursor: pointer;
+  width: auto;
+  font-family: "Trebuchet MS", arial;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  transition: 0.3s ease all;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519' fill='rgba(255,255,255,.5)'/></svg>");
+  background-color: #006FCE;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  height: 48px;
+}
+
+.blue {
+  background-color: #00A8FF;
+}
+
+.blue:hover {
+  background-color: #0097E6;
 }
 
 /*------ INFO  VIDEO*/
@@ -558,11 +612,11 @@ input[type="checkbox"] {
   0% {
     color: #FFF;
   }
-  
+
   50% {
     color: #F27722;
   }
-  
+
   100% {
     color: #FFF;
   }
@@ -572,12 +626,12 @@ input[type="checkbox"] {
   0% {
     opacity: 0.3;
   }
-  
+
   40% {
     opacity: 1;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 3px 3px #94D6EA, 0 0 0 3px rgba(255, 255, 255, 0.5);
   }
-  
+
   100% {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 3px 3px #94D6EA, 0 0 0 3px rgba(255, 255, 255, 0.5);
     -webkit-transform: scale(1.5);
@@ -589,12 +643,12 @@ input[type="checkbox"] {
   0% {
     opacity: 0.3;
   }
-  
+
   40% {
     opacity: 1;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #94D6EA, 0 0 0 10px rgba(255, 255, 255, 0.5);
   }
-  
+
   100% {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #94D6EA, 0 0 0 10px rgba(255, 255, 255, 0.5);
     -moz-transform: scale(1.5);
@@ -606,12 +660,12 @@ input[type="checkbox"] {
   0% {
     opacity: 0.3;
   }
-  
+
   40% {
     opacity: 1;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 3px 3px #94D6EA, 0 0 0 3px rgba(255, 255, 255, 0.5);
   }
-  
+
   100% {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 3px 3px #94D6EA, 0 0 0 3px rgba(255, 255, 255, 0.5);
     transform: scale(1.5);
@@ -627,18 +681,18 @@ a {
 
 .download {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;*/
+  justify-content: flex-end;
   margin-top: -1px;
-  position: absolute;
-  right: 410px;
+  width: 45%;
+  padding-left: 30px;
 }
 
 .downloadbtn {
   margin-right: 20px;
   height: 50px;
   line-height: 50px;
-  width: 200px;
+  width: 170px;
   text-align: center;
   color: #FFF;
   font-size: 22px;
@@ -679,7 +733,7 @@ a {
   margin-right: 20px;
   height: 50px;
   line-height: 50px;
-  width: 200px;
+  width: 150px;
   text-align: center;
   color: #333;
   font-size: 22px;
@@ -745,19 +799,19 @@ a {
   0% {
     width: 0%;
   }
-  
+
   30% {
     width: 30%;
   }
-  
+
   50% {
     width: 50%;
   }
-  
+
   80% {
     width: 80%;
   }
-  
+
   100% {
     width: 100%;
   }
@@ -767,19 +821,19 @@ a {
   0% {
     width: 0%;
   }
-  
+
   30% {
     width: 30%;
   }
-  
+
   50% {
     width: 50%;
   }
-  
+
   80% {
     width: 80%;
   }
-  
+
   100% {
     width: 100%;
   }
@@ -792,6 +846,7 @@ a {
   box-shadow: inset 0px 0px 0px 2px #EB6203;
   color: #FFFFFF;
 }
+
 .downloadvideobtn.finished {
   background-color: #F27722;
   -webkit-box-shadow: inset 0px 0px 0px 2px rgba(51, 51, 51, 1);
@@ -818,9 +873,302 @@ a {
 }
 
 /*-----  ANIMATION*/
-.delaytxt {
-}
-
 .border-section {
   display: none;
+}
+
+/* Layer */
+.toolpanel.fabric-layer {
+  left: calc(100% - 300px);
+}
+
+.toolpanel.fabric-layer .content .hide-show-handler {
+  left: -42px;
+  background-image: url(../../assets/images/caret-right.svg);
+}
+
+.toolpanel.closed .content .hide-show-handler {
+  background-image: url(../../assets/images/caret-left.svg);
+}
+
+.toolpanel.fabric-layer.closed {
+  left: 100%;
+}
+
+.toolpanel.fabric-layer .layer-footer button {
+  padding: 5px 28px;
+  border: none;
+  outline: none;
+  border: 1px solid #CCC;
+  background: #FFF;
+  cursor: pointer;
+}
+
+.toolpanel.fabric-layer .layer-footer button.active {
+  border: 1px solid #0000ff7d;
+}
+
+.toolpanel.fabric-layer .layer-footer {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolpanel.fabric-layer .single-layer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #ECE7E7;
+  margin-bottom: 5px;
+  height: 40px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.toolpanel.fabric-layer .single-layer.sub-group .action button {
+  display: none;
+}
+
+.toolpanel.fabric-layer .single-layer .action button {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.toolpanel.fabric-layer .single-layer .action {
+  margin-right: 15px;
+  display: flex;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.toolpanel.fabric-layer .single-layer .action button svg {
+  width: 25px !important;
+  height: 15px;
+  padding: 0px;
+}
+
+.toolpanel.fabric-layer .single-layer.active {
+  background: #CCE2ED;
+}
+
+.toolpanel.fabric-layer .single-layer p {
+  margin-left: 10px;
+}
+
+.toolpanel.fabric-layer .single-layer .icon svg,
+.toolpanel.fabric-layer .single-layer .icon {
+  width: 25px !important;
+}
+
+.toolpanel.fabric-layer .single-layer .icon svg {
+  height: 20px;
+}
+
+.toolpanel.fabric-layer .single-layer .icon {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolpanel.fabric-layer .single-layer .icon img {
+  width: 25px;
+  object-fit: contain;
+}
+
+.toolpanel.fabric-layer .single-layer.sub-group {
+  margin-left: 37px;
+  width: 86%;
+}
+
+/* Layer */
+.canvas-text-edit {
+  width: 100%;
+  color: #034986;
+}
+
+/* Checkbox  */
+.checkbox-round.object-toggle-btn {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #333;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round.object-toggle-btn:checked {
+  background-color: #2196F3;
+  border: 1px solid rgba(255, 0, 0, 0.558);
+}
+
+input[type="checkbox"].object-toggle-btn {
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 18px !important;
+  height: 18px !important;
+  margin-bottom: 0;
+}
+
+/* Checkbox  */
+/* Style the select box itself */
+#custom-select {
+  width: 45%;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.lock-move-xy {
+  display: flex;
+  justify-content: space-between;
+}
+
+.justify-content {
+  justify-content: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.ml-3 {
+  margin-left: 15px;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+.snap-grid-container {
+  padding-bottom: 26px;
+  margin-left: 20px;
+}
+
+.snap-grid-container span {
+  color: #333 !important;
+  font-size: 14px !important;
+  vertical-align: baseline;
+}
+
+#download {
+  display: none;
+}
+
+
+/* movement animation css */
+.tab-system-container .tabs {
+  display: flex;
+  padding: 10px;
+}
+
+.tab-system-container .tabs .tab:hover,
+.tab-system-container .tabs .tab.active {
+  background-color: #eaeaea;
+  border-bottom: 1px solid #006FCE;
+}
+
+.tab-system-container .tabs .tab {
+  padding: 5px 30px !important;
+  margin-right: 5px !important;
+}
+
+.tab-system-container .pt-0 {
+  padding-top: 0px !important;
+}
+
+.tab-system-container .tab-content.active {
+  display: block;
+}
+
+.tab-system-container .tab-content {
+  display: none;
+}
+
+/* movement animation css */
+
+.animation-steps-container .movement-fields {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.animation-steps-container .movement-fields .form-group {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+.animation-steps-container .movement-fields .form-group label {
+  font-size: 13px;
+}
+
+.animation-steps-container .movement-fields .form-group .form-control {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.animation-steps-container .movement-fields .form-group .form-control:focus {
+  outline: none;
+  border-bottom: 1px solid #006FCE;
+}
+
+.mt-3 {
+  margin-top: 15px !important;
+}
+
+.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.animation-steps-container .delete-duration-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  margin-right: 15px;
+}
+
+.movement-control-btns button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  margin-right: 5px;
+
+}
+
+.movement-control-btns {
+  margin-bottom: 25px;
+}
+
+.animation-steps-container {
+  height: calc(100vh - 21vh);
+  overflow: auto;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.play-animation-btns {
+  padding-right: 20px;
 }

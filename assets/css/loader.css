@@ -1,0 +1,48 @@
+    /* Style the full-screen loader container */
+    .full-screen-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Semi-transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: none;
+        z-index: 99999999;
+    }
+
+    /* Style the loader animation (modify as needed) */
+    .loader {
+        border: 8px solid #f3f3f3;
+        /* Light gray border */
+        border-top: 8px solid #3498db;
+        /* Blue border, adjust the color as needed */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+        /* Apply a spinning animation */
+    }
+
+    /* Style the loading text */
+    .label {
+        color: #fff;
+        /* Text color */
+        font-size: 18px;
+        /* Font size */
+        margin-top: 10px;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
