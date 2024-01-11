@@ -76,6 +76,7 @@ function addLayer(object, layerUpdate = false) {
     } else if (type == "path" && object.svgPathExt == "svg") {
         svgIcon = object.svgPath;
     }
+
     // set properties
     if (!layerUpdate && !object.id) {
         object.set({
@@ -83,6 +84,8 @@ function addLayer(object, layerUpdate = false) {
         });
         id = object.id;
     }
+    id = object.id;
+
     if (!svgIcon) return false;
     let $html = createLayerHtml(object, svgIcon);
     // sub group
@@ -127,7 +130,7 @@ function addLayer(object, layerUpdate = false) {
 function layerPositionChange(canvas, layerUpdate = false) {
     setTimeout(() => {
         let objects = canvas._objects;
-        let layerContainer = $(`${_self.containerSelector} .toolpanel.fabric-layer .layer-container`);
+        let layerContainer = $(`#image-editor-container .toolpanel.fabric-layer .layer-container`);
         layerContainer.html('');
         if (objects.length < 1) return false;
         objects.forEach(obj => {
@@ -195,7 +198,7 @@ function objectAnimationMovementHTML(objectId, index, props) {
         <div class="movement-fields">
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" name="title" class="form-control" value="${props.title} #${index}">
+                <input type="text" name="title" class="form-control" value="${props.title}">
             </div>
             <div class="form-group">
                 <label>Delay Start</label>
